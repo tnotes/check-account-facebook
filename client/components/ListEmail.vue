@@ -31,8 +31,8 @@
 		
 		methods:{
 			async Scan(email){
-				let {data:{success,error}} = await this.$axios.post('http://localhost/api/email/scan',{email});
-				if(success) await this.$axios.post('http://localhost/api/result',{email});
+				let {data:{success,error}} = await this.$axios.post('http://www.vutienanh.cf/api/email/scan',{email});
+				if(success) await this.$axios.post('http://www.vutienanh.cf/api/result',{email});
 				this.listEmail = this.listEmail.map(e=>{
 					if(e.email === email) e.result = success;
 					return e;

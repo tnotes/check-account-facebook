@@ -17,23 +17,23 @@
 			}
 		},
 		created:async function(){
-			let {data} = await this.$axios.get('http://localhost/api/status');
+			let {data} = await this.$axios.get('http://www.vutienanh.cf/api/status');
 			return this.turnon = data[0].status;
 		},
 		mounted:async function(){
 			let _ = this;
 			setInterval(async function(){
-				let {data} = await _.$axios.get('http://localhost/api/scan');
+				let {data} = await _.$axios.get('http://www.vutienanh.cf/api/scan');
 				_.listEmail = data;
 			},1000)
 		},
 		methods:{
 			async turn(){
-			    await this.$axios.post('http://localhost/api/email/autoscan',{turnon:this.turnon});	
+			    await this.$axios.post('http://www.vutienanh.cf/api/email/autoscan',{turnon:this.turnon});	
 			}
 		},
 		async asyncData({$axios}){
-			let {data} = await $axios.get('http://localhost/api/scan');
+			let {data} = await $axios.get('http://www.vutienanh.cf/api/scan');
 			return {
 				listEmail:data
 			}

@@ -29,7 +29,7 @@
 			}
 		},
 		created:async function(){
-			let {data} = await this.$axios.get('http://localhost/api/email');
+			let {data} = await this.$axios.get('http://www.vutienanh.cf/api/email');
 			
 			this.list_email = data;
 		},
@@ -43,7 +43,7 @@
 					let list_email = split_email.filter(e=>e.includes('@'));
 					if(list_email.length === 0) return false;
 					for(let email of list_email){
-						let {data} = await this.$axios.post('http://localhost/api/email',{email});
+						let {data} = await this.$axios.post('http://www.vutienanh.cf/api/email',{email});
 						this.$message({
 							message:'Đã nạp thành công '+email,
 							type:'success'

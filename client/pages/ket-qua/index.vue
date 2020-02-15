@@ -67,12 +67,12 @@
 				await this.loadData();
 			},
 			loadFull:async function(command = ''){
-				let {data} = await this.$axios.get('http://localhost/api/result?limit=10000000000&where={"email":{"contains":"'+command+'"}}');
+				let {data} = await this.$axios.get('http://www.vutienanh.cf/api/result?limit=10000000000&where={"email":{"contains":"'+command+'"}}');
 				return this.count = data.length;
 			},
 			loadData:async function(pagination = 1){
 
-				let {data} = await this.$axios.get('http://localhost/api/result?limit=30&where={"email":{"contains":"'+this.command+'"}}&skip='+(30*(pagination-1)));
+				let {data} = await this.$axios.get('http://www.vutienanh.cf/api/result?limit=30&where={"email":{"contains":"'+this.command+'"}}&skip='+(30*(pagination-1)));
 				return this.data = data;
 			},
 			
@@ -104,7 +104,7 @@
 			download(hold){
 				this.$axios({
 					method: 'post',
-					url: 'http://localhost/api/email/download',
+					url: 'http://www.vutienanh.cf/api/email/download',
 					data:{domain:this.command,hold},
 					responseType: 'arraybuffer'
 				})

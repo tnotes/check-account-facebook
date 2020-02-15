@@ -34,7 +34,7 @@
 		},
 		methods:{
 			async AgreeRemove(index,row){
-				let {data} = await this.$axios.delete('http://localhost/api/result/'+row.id);
+				let {data} = await this.$axios.delete('http://www.vutienanh.cf/api/result/'+row.id);
 				return this.data = this.data.filter(({id})=> row.id !== id);
 			},
 			
