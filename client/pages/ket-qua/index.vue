@@ -67,7 +67,7 @@
 				await this.loadData();
 			},
 			loadCount:async function(command = ''){
-				let {data} = await this.$axios.get('http://www.vutienanh.cf/api/result?command='+command);
+				let {data} = await this.$axios.get('http://www.vutienanh.cf/api/result/count?command='+command);
 				return this.count = data;
 			},
 			loadData:async function(pagination = 1){
