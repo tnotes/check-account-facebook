@@ -6,7 +6,10 @@
  */
 
 module.exports = {
-  
-
+	count:async function(req,res){
+		let {command} = req.query;
+		let count = await Result.count().where({email:{contains:command || ''}});
+		return res.send(count.toString());
+	}
 };
 

@@ -53,7 +53,8 @@
  			await Promise.all(remove_map);
  		}
  		return res.download('./email.txt');
- 	}
+ 	},
+ 	
 
  };
 

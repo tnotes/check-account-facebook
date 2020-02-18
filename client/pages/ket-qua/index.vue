@@ -50,7 +50,7 @@
 		},
 		created:async function(){
 			await this.loadData();
-			await this.loadFull();
+			await this.loadCount();
 
 		},
 		methods:{
@@ -63,12 +63,12 @@
 					this.title = command;
 					this.command = command;
 				}
-				await this.loadFull(command);
+				await this.loadCount(command);
 				await this.loadData();
 			},
-			loadFull:async function(command = ''){
-				let {data} = await this.$axios.get('http://www.vutienanh.cf/api/result?limit=10000000000&where={"email":{"contains":"'+command+'"}}');
-				return this.count = data.length;
+			loadCount:async function(command = ''){
+				let {data} = await this.$axios.get('http://www.vutienanh.cf/api/result?command='+command);
+				return this.count = data;
 			},
 			loadData:async function(pagination = 1){
 
